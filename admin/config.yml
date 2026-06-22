@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: TU_USUARIO/TU_REPO
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "imagenes"
+public_folder: "/imagenes"
+
+locale: es
+
+collections:
+  - name: "articulos"
+    label: "Artículos"
+    folder: "articulos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título",   name: "titulo",  widget: "string" }
+      - { label: "Autor/a",  name: "autor",   widget: "string" }
+      - label: "Sección"
+        name: "seccion"
+        widget: "select"
+        options:
+          - { label: "Pantalla",       value: "Pantalla" }
+          - { label: "Conversaciones", value: "Conversaciones" }
+          - { label: "Paranoia",       value: "Paranoia" }
+          - { label: "Ruidos",         value: "Ruidos" }
+          - { label: "Miopía",         value: "Miopía" }
+          - { label: "Hedor",          value: "Hedor" }
+      - { label: "Fecha",       name: "fecha",    widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Imagen",      name: "imagen",   widget: "image",  required: false }
+      - { label: "Extracto",    name: "extracto", widget: "text",   required: false, hint: "Opcional. Si no lo completás se usa el inicio del texto." }
+      - { label: "Contenido",   name: "body",     widget: "markdown" }
+      - { label: "Publicado",   name: "publicado", widget: "boolean", default: true }
+      - { label: "Orden",       name: "orden",    widget: "number", default: 0, hint: "Número menor = aparece primero. Cambialo para reordenar artículos." }
