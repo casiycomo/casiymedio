@@ -1,0 +1,32 @@
+name: Generar índice de artículos
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generar-indice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generar articles-index.json
+        run: node generar-indice.js
+
+      - name: Commit y push del índice
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add articles-index.json
+          git diff --staged --quiet || git commit -m "chore: actualizar índice [skip ci]"
+          git push
