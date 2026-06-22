@@ -2,7 +2,7 @@ backend:
   name: github
   repo: casiycomo/casiymedio
   branch: main
-  base_url: moonlit-choux-a813cd.netlify.app
+  base_url: https://moonlit-choux-a813cd.netlify.app
   auth_endpoint: auth
 
 media_folder: "imagenes"
