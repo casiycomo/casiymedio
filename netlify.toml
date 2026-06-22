@@ -1,0 +1,10 @@
+# Netlify solo se usa para autenticar el panel de admin.
+# El sitio vive en GitHub Pages — Netlify no lo aloja.
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin/*"
+  to   = "/admin/index.html"
+  status = 200
