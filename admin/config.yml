@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU_USUARIO/TU_REPO
+  repo: casiycomo/casiymedioAdmin
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
