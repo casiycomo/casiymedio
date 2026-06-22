@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: casiycomo/casiymedioAdmin
+  repo: casiycomo/casiymedio
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
@@ -29,9 +29,9 @@ collections:
           - { label: "Ruidos",         value: "Ruidos" }
           - { label: "Miopía",         value: "Miopía" }
           - { label: "Hedor",          value: "Hedor" }
-      - { label: "Fecha",       name: "fecha",    widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-      - { label: "Imagen",      name: "imagen",   widget: "image",  required: false }
-      - { label: "Extracto",    name: "extracto", widget: "text",   required: false, hint: "Opcional. Si no lo completás se usa el inicio del texto." }
-      - { label: "Contenido",   name: "body",     widget: "markdown" }
-      - { label: "Publicado",   name: "publicado", widget: "boolean", default: true }
-      - { label: "Orden",       name: "orden",    widget: "number", default: 0, hint: "Número menor = aparece primero. Cambialo para reordenar artículos." }
+      - { label: "Fecha", name: "fecha", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Imagen", name: "imagen", widget: "image", required: false }
+      - { label: "Extracto", name: "extracto", widget: "text", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Publicado", name: "publicado", widget: "boolean", default: true }
+      - { label: "Orden", name: "orden", widget: "number", default: 0 }
